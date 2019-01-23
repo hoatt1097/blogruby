@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body id="store">
+    <div id="banner">
+        <%= image_tag("https://intreeweek.nl/wp-content/uploads/2018/05/dgdzhbdbnghqvvogxw8biu7o_6.jpg") %>
+        <%= @page_title || "Books Store" %>
+    </div>
+    <div id="columns">
+        <div id="side">
+            <div id="cart">
+                <%= hide_cart_if(current_cart.line_items.empty?, :id => "cart") do %>
+                    <%= render current_cart %> 
+                <% end %>
+            </div>
+            <%= link_to 'Home', stores_path %><br />
+            <%= link_to 'Page hello', say_hello_path %><br />
+            <%= link_to 'Page goodby', say_goodby_path %><br />
+            <%= link_to 'Admin', products_path%><br />
+            <%= link_to 'Cart', carts_path%><br />
+
+            <div id="info">
+                <%= hide_cart_if(session_id.nil?, :id => "info") do %>
+                     <%= link_to 'Your infomation', current_user%><br /> 
+                <% end %>
+            </div>
+
+            <%= link_to 'Register', '/users/new'%><br/>
+            <%= link_to 'Login', '/login'%><br/>
+            <a href="#">Contact</a><br />
+        </div>
+        <div id="main">
+            <%= yield %>
+        </div>
+    </div> 
+</body>
+</html>
