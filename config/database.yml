@@ -5,13 +5,17 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: mysql2
+  # adapter: mysql2
+  # encoding: utf8
+  # pool: 5
+  # username: root
+  # password: root
+  # socket: /var/run/mysqld/mysqld.sock
+  # timeout: 5000
+
+  adapter: postgresql
   encoding: utf8
   pool: 5
-  username: root
-  password: root
-  socket: /var/run/mysqld/mysqld.sock
-  timeout: 5000
 
 development:
   <<: *default
