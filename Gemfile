@@ -39,7 +39,7 @@ group :development do
 end
 
 group :production do
-  gem 'mysql2', '~> 0.3.21'
+  gem 'pg'
 end
 
 group :development do
