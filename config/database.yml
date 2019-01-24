@@ -27,6 +27,5 @@ test:
 production:
   <<: *default
   #adapter: mysql2
-  adapter: postgresql
   database: blogruby
   
