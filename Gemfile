@@ -36,10 +36,11 @@ gem 'bcrypt'
 group :development do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'mysql2', '~> 0.3.21'
 end
 
 group :production do
-  gem "pg"
+  gem 'pg'
   gem 'rails_12factor'
 end
 
