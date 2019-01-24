@@ -5,7 +5,13 @@
 #   gem 'sqlite3'
 #
 default: &default
- 
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: root
+  password: root
+  socket: /var/run/mysqld/mysqld.sock
+  timeout: 5000
 
 development:
   <<: *default
@@ -20,6 +26,5 @@ test:
 
 production:
   <<: *default
-  #adapter: mysql2
-  database: blogruby
+  database: db/production.blogruby
   
