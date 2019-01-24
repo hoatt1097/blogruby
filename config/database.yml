@@ -26,5 +26,5 @@ test:
 
 production:
   <<: *default
-  database: db/production.blogruby
+  database: db/production.sqlite3
   
