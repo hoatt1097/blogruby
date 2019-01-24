@@ -26,7 +26,6 @@ test:
 
 production:
   <<: *default
-  database: ENV['CLEARDB_URL']
-  username: ENV['CLEARDB_DATABASE_USERNAME']
-  password: ENV['CLEARDB_DATABASE_PASSWORDs']
+  #adapter: mysql2
+  database: blogruby
   
