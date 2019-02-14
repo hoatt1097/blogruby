@@ -5,4 +5,7 @@ module ApplicationHelper
         end
         content_tag("div", attributes, &block) 
     end
+    def default_url_options
+        { locale: I18n.locale }
+    end
 end

@@ -4,6 +4,7 @@
     <title>Blog</title>
     <%= csrf_meta_tags %>
 
+    <%= favicon_link_tag 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3Td0BNFvisPAOvXem7A3ulRQpdcQUCXior9mCAuqpK_WV5LrqCQ' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -11,7 +12,12 @@
   <body id="store">
     <div id="banner">
         <%= image_tag("https://intreeweek.nl/wp-content/uploads/2018/05/dgdzhbdbnghqvvogxw8biu7o_6.jpg") %>
-        <%= @page_title || "Books Store" %>
+        <%= @page_title || t('title')%>
+        <li class="navi6"><select name="locale_id" id="locale_id" onchange="location.href=value">
+            <option value="">Language</option>
+            <option value="/ja">日本語</option>
+            <option value="/en">English</option>
+        </select>
     </div>
     <div id="columns">
         <div id="side">
@@ -20,21 +26,21 @@
                     <%= render current_cart %> 
                 <% end %>
             </div>
-            <%= link_to 'Home', stores_path %><br />
-            <%= link_to 'Page hello', say_hello_path %><br />
-            <%= link_to 'Page goodby', say_goodby_path %><br />
-            <%= link_to 'Admin', products_path%><br />
-            <%= link_to 'Cart', carts_path%><br />
+            <%= link_to t('home'), stores_path %><br />
+            <%= link_to t('page_hello'), say_hello_path %><br />
+            <%= link_to t('page_goodby'), say_goodby_path %><br />
+            <%= link_to t('admin'), products_path%><br />
+            <%= link_to t('cart'), carts_path%><br />
 
             <div id="info">
                 <%= hide_cart_if(session_id.nil?, :id => "info") do %>
-                     <%= link_to 'Your infomation', current_user%><br /> 
+                     <%= link_to t('infomation'), current_user%><br /> 
                 <% end %>
             </div>
 
-            <%= link_to 'Register', '/users/new'%><br/>
-            <%= link_to 'Login', '/login'%><br/>
-            <a href="#">Contact</a><br />
+            <%= link_to t('register'), new_user_path%><br/>
+            <%= link_to t('login'), sessions_new_path%><br/>
+            <a href="#"><%=t('contact')%></a><br />
         </div>
         <div id="main">
             <%= yield %>

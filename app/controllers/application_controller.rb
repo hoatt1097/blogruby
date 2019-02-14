@@ -1,11 +1,18 @@
 class ApplicationController < ActionController::Base
 	protect_from_forgery with: :exception
-	include SessionsHelper
+	before_action :set_locale
 
+	include SessionsHelper
+	include ApplicationHelper
+	
 	private
 
 	def session_id 
 		session[:user_id]
+	end
+
+	def set_locale
+		I18n.locale = params[:locale] || I18n.default_locale
 	end
 
 	def current_user

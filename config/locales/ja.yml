@@ -19,31 +19,31 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
-  hello:  "Hello world"
-  title:  "Book store"
-  home:  "Home"
-  page_hello:   "Page hello"
-  page_goodby:   "page goodby"
-  admin:  "Admin"
-  cart:  "Cart"
-  infomation: "Your infomation"
-  register: "Register"
-  login:  "Login"
-  contact: "Contact" 
+ja:
+  hello:  "こんにちは世界"
+  title:  "書店"
+  home:  "ホーム"
+  page_hello:   "ページこんにちは"
+  page_goodby:   "ページグッバイ"
+  admin:  "管理者"
+  cart:  "カート"
+  infomation: "あなたの情報"
+  register: "登録"
+  login:  "ログイン"
+  contact: "接触" 
   stores:
     index:
-      project_list: "Projects list"
-      add_cart: "Add to cart"
+      project_list: "プロジェクト一覧"
+      add_cart: "カートに追加"
   carts:
     show:
-      your_cart: "Your cart"
-      total:  "Total"
-      empty_cart: "Empty cart"
+      your_cart: "あなたのカート"
+      total:  "合計"
+      empty_cart: "空のカート"
   products:
     index:
-      title: "Product"
-      new_product: "New product"
-      show: "Show"
-      edit: "Edit"
-      destroy:  "Destroy"
+      title: "製品"
+      new_product: "新製品"
+      show: "見せる"
+      edit: "編集する"
+      destroy:  "破壊する"
